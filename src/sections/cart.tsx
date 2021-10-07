@@ -14,6 +14,7 @@ import {
 import React from "react";
 
 const Cart = () => {
+    const { toggleColorMode } = useColorMode();
     const bgColor = useColorModeValue('gray.50', 'whiteAlpha.50');
     const secondaryTextColor = useColorModeValue('gray.600', 'gray.400');
     return (
@@ -23,12 +24,12 @@ const Cart = () => {
             p={10}
             spacing={10}
             alignItems="flex-start"
-            bg="gray.50"
+            bg={bgColor}
         >
             <VStack spacing={3} alignItems="flex-start">
                 <Heading size="2xl">Your Cart</Heading>
                 <Text>If the price is too hard on your eyes,{' '}
-                    <Button variant="link" colorScheme="black">
+                    <Button onClick={toggleColorMode} variant="link" colorScheme="black">
                         try changing the theme.
                     </Button>
                 </Text>
